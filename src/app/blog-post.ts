@@ -1,5 +1,5 @@
 export interface BlogPost {
-  [key:string]: any
+  [key:string]: unknown
   id: number
   date: string
   date_gmt: string
@@ -20,7 +20,7 @@ export interface BlogPost {
   sticky: boolean
   template: string
   format: string
-  meta: any[]
+  meta: unknown[]
   categories: number[]
   tags: number[]
   topic: number[]
@@ -211,7 +211,7 @@ export interface ImageMeta {
   shutter_speed: string
   title: string
   orientation: string
-  keywords: any[]
+  keywords: unknown[]
 }
 
 export interface Sizes {}
