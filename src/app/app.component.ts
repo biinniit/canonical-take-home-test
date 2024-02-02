@@ -1,7 +1,8 @@
-import { BlogPostService } from './blog-post.service';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BlogPost } from './blog-post';
+
+import { BlogPost } from './blog-post.model';
+import { BlogPostService } from './blog-post.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,9 @@ export class AppComponent {
   title = 'canonical-take-home-test';
   blogPosts: BlogPost[] = [];
 
-  defaultGroup = '&#91;Unknown&#93;';
+  readonly missingData = '\u005bUnknown\u005d';
+  readonly missingGroup = 'General';
+  readonly missingLink = './#';
 
   constructor(private service: BlogPostService) {
     this.loadBlogPosts();
@@ -26,7 +29,37 @@ export class AppComponent {
     });
   }
 
-  findGroup(blogPost: BlogPost): string | null {
-    return this.service.findGroup(blogPost) ?? this.defaultGroup;
+  getGroup(blogPost: BlogPost): string {
+    return this.service.getGroup(blogPost) ?? this.missingGroup;
+  }
+
+  getMedia(blogPost: BlogPost): string {
+    return this.service.getMedia(blogPost);
+  }
+
+  getMediaTitle(blogPost: BlogPost): string {
+    const mediaTitle = this.service.getMediaTitle(blogPost);
+    let displayedMediaTitle = 'Media for ';
+    if(mediaTitle != null) {
+      displayedMediaTitle += `"${mediaTitle}" `;
+    }
+    return displayedMediaTitle + 'post';
+  }
+
+  getAuthor(blogPost: BlogPost): string {
+    return this.service.getAuthor(blogPost) ?? this.missingData;
+  }
+
+  getAuthorLink(blogPost: BlogPost): string {
+    return this.service.getAuthorLink(blogPost) ?? this.missingLink;
+  }
+
+  formatDate(blogPost: BlogPost): string {
+    const date = new Date(blogPost.date);
+    return Intl.DateTimeFormat(undefined, { dateStyle: 'long' }).format(date);
+  }
+
+  getCategory(blogPost: BlogPost): string {
+    return this.service.getCategory(blogPost) ?? this.missingData;
   }
 }

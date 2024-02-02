@@ -11,10 +11,22 @@
           <div class="p-card">
   
             <header class="p-card__inner">
-              <p [innerHTML]="findGroup(blogPost)"></p>
+              <p>{{ getGroup(blogPost) }}</p>
             </header>
-            <!-- blog content -->
-            <div class="p-card__content"></div>
+            <hr class="u-sv1">
+            <img class="p-card__image" height="150" width="275" [src]="getMedia(blogPost)" [alt]="getMediaTitle(blogPost)">
+            <h4>
+              <a [href]="blogPost.link">{{ blogPost.title.rendered }}</a>
+            </h4>
+            <p><em>
+              By
+              <a [href]="getAuthorLink(blogPost)">{{ getAuthor(blogPost) }}</a>
+              on {{ formatDate(blogPost) }}
+            </em></p>
+            <hr class="u-sv1">
+            <footer class="p-card__inner">
+              <p>{{ getCategory(blogPost) }}</p>
+            </footer>
           </div>
         </div>
       }
