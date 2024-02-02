@@ -1,0 +1,24 @@
+@import '../styles.scss';
+
+.main > * {
+  margin: 1rem;
+}
+
+.p-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: $spv--x-small;
+  border-top: 3px solid $color-accent;
+}
+
+header.p-card__content {
+  padding-bottom: $spv--small;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+footer.p-card__content {
+  padding-top: $spv--medium;
+  font-size: 0.875rem;
+}

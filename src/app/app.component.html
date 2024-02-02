@@ -7,14 +7,16 @@
 
       <!-- blog wrapper -->
       @for (blogPost of blogPosts; track blogPost.id) {
-        <div class="l-fluid-breakout__item">
-          <div class="p-card">
+        <div class="l-fluid-breakout__item p-card">
   
-            <header class="p-card__inner">
+          <div>
+            <header class="p-card__content">
               <p>{{ getGroup(blogPost) }}</p>
             </header>
-            <hr class="u-sv1">
-            <img class="p-card__image" height="150" width="275" [src]="getMedia(blogPost)" [alt]="getMediaTitle(blogPost)">
+            <hr class="is-muted">
+            <a [href]="blogPost.link">
+              <img class="p-card__image" height="150" width="275" [src]="getMedia(blogPost)" [alt]="getMediaTitle(blogPost)">
+            </a>
             <h4>
               <a [href]="blogPost.link">{{ blogPost.title.rendered }}</a>
             </h4>
@@ -23,8 +25,10 @@
               <a [href]="getAuthorLink(blogPost)">{{ getAuthor(blogPost) }}</a>
               on {{ formatDate(blogPost) }}
             </em></p>
-            <hr class="u-sv1">
-            <footer class="p-card__inner">
+          </div>
+          <div>
+            <hr class="is-muted">
+            <footer class="p-card__content">
               <p>{{ getCategory(blogPost) }}</p>
             </footer>
           </div>
