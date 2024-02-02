@@ -1,7 +1,9 @@
 @import '../styles.scss';
 
+@include vf-l-fluid-breakout($l-fluid-breakout-aside-width, $l-fluid-breakout-main-child-width, 2rem);
+
 .l-fluid-breakout__main {
-  margin: $sph--large;
+  margin-top: $sph--large;
 }
 
 .p-card {
