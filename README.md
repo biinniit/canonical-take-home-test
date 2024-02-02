@@ -1,26 +1,23 @@
-# CanonicalTakeHomeTest
+# Canonical Take-Home Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+[![npm 10.2.4](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjQuNjQwNjM2NDQ0MDkxOCIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDEyNC42NDA2MzY0NDQwOTE4IDM1Ij48cmVjdCB3aWR0aD0iNTIuNjU2MjUzODE0Njk3MjY2IiBoZWlnaHQ9IjM1IiBmaWxsPSIjMzFDNEYzIi8+PHJlY3QgeD0iNTIuNjU2MjUzODE0Njk3MjY2IiB3aWR0aD0iNzEuOTg0MzgyNjI5Mzk0NTMiIGhlaWdodD0iMzUiIGZpbGw9IiMzODlBRDUiLz48dGV4dCB4PSIyNi4zMjgxMjY5MDczNDg2MzMiIHk9IjE3LjUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSInUm9ib3RvJywgc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgYWxpZ25tZW50LWJhc2VsaW5lPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5OUE08L3RleHQ+PHRleHQgeD0iODguNjQ4NDQ1MTI5Mzk0NTMiIHk9IjE3LjUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtZmFtaWx5PSInTW9udHNlcnJhdCcsIHNhbnMtc2VyaWYiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI5MDAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iMiI+MTAuMi40PC90ZXh0Pjwvc3ZnPg==)](https://forthebadge.com)
 
-## Development server
+This is a project built to fulfill an assessment from Canonical, to replicate [this design](src/assets/sample-cards.png) using the [Vanilla framework]([url](https://vanillaframework.io/docs)). This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and **npm version 10.2.4**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Setup
 
-## Code scaffolding
+### Install npm packages
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install the `npm` packages described in the `package.json` and verify that it works:
 
-## Build
+```shell
+npm install
+npm run start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The `npm run start` command builds (compiles TypeScript and copies assets) the application, watches for changes to the source files, and runs a dev server on `http://localhost:4200/`.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Press `q + enter` to shut it down.
 
 ## Further help
 
