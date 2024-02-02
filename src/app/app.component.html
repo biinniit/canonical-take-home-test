@@ -1,54 +1,55 @@
 <main class="main">
 
-  <!-- blogs -->
-  <section class="l-fluid-breakout">
+  @if (blogPosts.length !== 0) {
 
-    <div class="l-fluid-breakout__main">
-
-      <!-- blog wrapper -->
-      @for (blogPost of blogPosts; track blogPost.id) {
-        <div class="l-fluid-breakout__item p-card">
+    <!-- blogs -->
+    <section class="l-fluid-breakout">
   
-          <div>
-            <header class="p-card__content">
-              <p>{{ getGroup(blogPost) }}</p>
-            </header>
-            <hr class="is-muted">
-            <a [href]="blogPost.link">
-              <img class="p-card__image" height="150" width="275" [src]="getMedia(blogPost)" [alt]="getMediaTitle(blogPost)">
-            </a>
-            <h4>
-              <a [href]="blogPost.link">{{ blogPost.title.rendered }}</a>
-            </h4>
-            <p><em>
-              By
-              <a [href]="getAuthorLink(blogPost)">{{ getAuthor(blogPost) }}</a>
-              on {{ formatDate(blogPost) }}
-            </em></p>
+      <div class="l-fluid-breakout__main">
+  
+        <!-- blog wrapper -->
+        @for (blogPost of blogPosts; track blogPost.id) {
+          <div class="l-fluid-breakout__item p-card">
+    
+            <div>
+              <header class="p-card__content">
+                <p>{{ getGroup(blogPost) }}</p>
+              </header>
+              <hr class="is-muted">
+              <a [href]="blogPost.link">
+                <img class="p-card__image" height="150" width="275" [src]="getMedia(blogPost)" [alt]="getMediaTitle(blogPost)">
+              </a>
+              <h4>
+                <a [href]="blogPost.link">{{ blogPost.title.rendered }}</a>
+              </h4>
+              <p><em>
+                By
+                <a [href]="getAuthorLink(blogPost)">{{ getAuthor(blogPost) }}</a>
+                on {{ formatDate(blogPost) }}
+              </em></p>
+            </div>
+            <div>
+              <hr class="is-muted">
+              <footer class="p-card__content">
+                <p>{{ getCategory(blogPost) }}</p>
+              </footer>
+            </div>
           </div>
-          <div>
-            <hr class="is-muted">
-            <footer class="p-card__content">
-              <p>{{ getCategory(blogPost) }}</p>
-            </footer>
-          </div>
-        </div>
-      }
+        }
+      </div>
+    </section>
+  } @else {
 
-      @if (blogPosts.length === 0) {
-        <!-- no data found -->
-        <div class="p-strip">
-          <div class="row">
-            <div class="u-align--right col-4 col-medium-2 col-small-1">
-              <i class="p-icon--error"></i>
-            </div>
-            <div class="u-align--left col-8 col-medium-4 col-small-3">
-              <p class="p-heading--4 u-no-margin--bottom">No data found</p>
-              <p>Could not retrieve blog posts</p>
-            </div>
+    <!-- no data found -->
+    <div class="p-strip--light">
+      <div class="row">
+        <div class="p-notification--negative is-borderless">
+          <div class="p-notification__content">
+            <h3 class="p-notification__title">No data found</h3>
+            <p class="p-notification__message">Could not retrieve blog posts</p>
           </div>
         </div>
-      }
+      </div>
     </div>
-  </section>
+  }
 </main>
