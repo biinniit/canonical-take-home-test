@@ -1,8 +1,8 @@
 # Canonical Take-Home Test
 
-[![npm 10.2.4](src\assets\npm-version.svg)](https://forthebadge.com)
+[![npm 10.2.4](https://raw.githubusercontent.com/biinniit/canonical-take-home-test/main/src/assets/npm-version.svg)](https://forthebadge.com)
 
-This is a project built to fulfill an assessment from Canonical, to replicate [this design](src/assets/sample-cards.png) using the [Vanilla framework](https://vanillaframework.io/docs). This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and **npm version 10.2.4**.
+This is a project built to fulfill an assessment from Canonical, to replicate [this design](src/assets/sample-cards.png?raw=true) using the [Vanilla framework](https://vanillaframework.io/docs). This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and **npm version 10.2.4**.
 
 ## Setup
 
